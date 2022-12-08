@@ -1,5 +1,6 @@
 const express = require("express");
 const bodyParser = require("body-parser");
+const batchData = require("./public/database")
 const app = express();
 
 const PORT = 3000;
@@ -10,6 +11,13 @@ app.use(express.static("public"));
 
 app.get('/', (req,res)=>{
     res.render("index");
+})
+app.get('/alumni/:batch', (req,res)=>{
+    var batch = req.params.batch;
+    res.render("batchPage", {batch:batch, batchData:batchData});
+})
+app.get('/user', (req,res)=>{
+    res.render("signin_signup");
 })
 
 app.listen(PORT, ()=>{
