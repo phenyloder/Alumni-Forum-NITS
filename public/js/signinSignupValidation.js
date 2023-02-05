@@ -10,6 +10,7 @@ const passwordErrorListLogin=document.querySelector(".passwordErrorListLogin");
 
 const setError = (t, msg) => {
     t.classList.add("error");
+    t.classList.remove("success");
     emailErrorList.classList.remove("hide");
 }
 
@@ -21,6 +22,7 @@ const setSuccess = (t) => {
 const setErrorPassword = (t) => {
     t.classList.add("error");
     passwordErrorList.classList.remove("hide");
+    t.classList.remove("success");
 }
 
 const  setSuccessPassword = (t) => {
@@ -30,6 +32,7 @@ const  setSuccessPassword = (t) => {
 
 const setErrorLoginPassword = (t) => {
     t.classList.add("error");
+    t.classList.remove("success");
     passwordErrorListLogin.classList.remove("hide");
 }
 
@@ -42,6 +45,8 @@ const validateEmail = (t) => {
     const inputEmail = t.value;
     const checkEmail=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
     const inputBoxOuter = t.parentElement;
+
+    // console.log(inputBoxOuter);
     if(inputEmail === ""){
         emailErrorList.classList.add("hide");
         inputBoxOuter.classList.remove("success");
@@ -80,6 +85,8 @@ const validatePassword = (t) => {
     const inputPassword = t.value;
     const checkPassword = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,15}$/;
     const inputBoxOuter=t.parentElement;
+
+    console.log(inputBoxOuter);
     
     if(inputPassword===''){
         passwordErrorList.classList.add("hide");
