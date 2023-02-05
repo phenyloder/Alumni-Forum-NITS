@@ -89,6 +89,8 @@ form.sign-up-form{
     display: grid;
     grid-template-columns: 15% 85%;
     padding: 0 .4rem;
+    /* transition: all 0.3s;
+    animation: shaky 2s 0s 2 ease-in-out; */
 }
 
 .input-field i{
@@ -111,6 +113,59 @@ form.sign-up-form{
     color: #aaa;
     font-weight: 500;
 }
+
+@keyframes shaky {
+    0%{
+        transform: translateX(0);
+    }
+    20%{
+        transform: translateX(-8px);
+    }
+    40%{
+        transform: translateX(8px);
+    }
+    60%{
+        transform: translateX(-8px);
+    }
+    80%{
+        transform: translateX(8px)
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
+
+.input-field.error{
+    border: 2px solid #ff3860;
+    transition: 0.1s;
+    animation: shaky 1s 0s 1 ;
+}
+
+.input-field.success{
+    border: 2px solid #09c372;
+}
+
+.input-field .error{
+    color: #ff3860;
+    font-size: 9px;
+    height: 13px;
+}
+
+.emailErrorList{
+    position: relative;
+    display: flex;
+}
+
+.eList{
+    color: rgb(249, 84, 84);
+    font-size: 12px;
+}
+
+.hide{
+    display: none;
+}
+
+
 
 .btn{
     width: 150px;

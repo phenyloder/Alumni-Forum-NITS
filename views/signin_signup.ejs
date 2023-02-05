@@ -26,6 +26,11 @@
                         <i class="fas fa-lock"></i>
                         <input type="password" placeholder="Password" class="login-password" required>
                     </div>
+                    <div class="passwordErrorListLogin hide"> 
+                        <ul class="eList">
+                            <li class="errorItem">**Enter correct Password</li>
+                        </ul>
+                    </div>
                     <input type="submit" value="Login" class="btn solid">
 
                     <p class="social-text">Or Sign In With Social Platforms</p>
@@ -54,10 +59,22 @@
                     <div class="input-field">
                         <i class="fas fa-envelope"></i>
                         <input type="text" placeholder="Email" class="register-email" required>
+                         <div class="error"></div>
+                    </div>
+                    <div class="emailErrorList hide">
+                        <ul class="eList">
+                            <li class="errorItem"> **Enter correct Email ID!</li>
+                        </ul>
                     </div>
                     <div class="input-field">
                         <i class="fas fa-lock"></i>
                         <input type="password" placeholder="Password" class="register-password" required>
+                        <div class="error"></div>
+                    </div>
+                    <div class="passwordErrorList hide"> 
+                        <ul class="eList">
+                            <li class="errorItem">**Enter correct Password </li>
+                        </ul>
                     </div>
                     <input type="submit" value="Sign Up" class="btn solid submit-btn">
 
@@ -105,5 +122,6 @@
     </div>
     <%-include("partials/footer")%>
     <script src="/js/signin_signup.js"></script>
+    <script src="/js/signinSignupValidation.js"></script>
 </body>
 </html>
