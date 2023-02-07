@@ -73,7 +73,6 @@ const validateLoginPassword = (t) => {
     else{
         setSuccessLoginPassword(inputBoxOuter);
     }
-    console.log(inputBoxOuter);
 }
 
 const validatePassword = (t) => {
