@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/css/navbar.css" />
+    <link rel="stylesheet" href="/css/footer.css" />
+    <link rel="stylesheet" href="./css/index.css" />
+    <link rel="stylesheet" href="./css/admin.css">
+
+    <title>Alumni Forum | Admin Page</title>
+</head>
+<body>
+    <%-include('partials/navbar')%>
+    <div class="conatiner">
+        <div class="welcome">
+            <img src="/images/nit-logo.png" alt="" srcset="" id="logo"> 
+            <h1>Welcome to Admin Page</h1> 
+        </div>
+        <nav>
+            <div class="leftPortal">
+                <ul class="leftContent" >
+                    <li class="leftList" onclick="opentab(forum)">Forum Mangement</li>
+                    <li class="leftList" onclick="opentab(studentData)">Change the Student Data</li>
+                    <li class="leftList" onclick="opentab(notification)">Change the Notification</li>
+                    <li class="leftList" onclick="opentab(logOut)">Log Out</li>
+                </ul>
+            </div>
+    
+            <div class="rightPortal" >
+                <div class="rightContent active_tab" id="forum">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi error quas ipsam ea hic modi voluptates fugiat, amet consectetur consequuntur quam consequatur sed possimus aspernatur quibusdam rem sapiente impedit provident? <br></div>
+                <div class="rightContent" id="studentData">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptas accusamus explicabo aut alias! Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium beatae voluptatum laborum sunt, quisquam error.<br></div>
+                <div class="rightContent" id="notification"><div class="notices">
+                    <div class="notice-heading">Notices</div>
+                    <div class="line"></div>
+                    <div class="notice-list">
+                        <ul class="ul-notice">
+                            <li class="list-item">
+                                Hemdutt Bhaiya Placed <img src="./images/tnew.gif" />
+                            </li>
+                            <li class="list-item">
+                                Arjun Bhaiya Placed <img src="./images/tnew.gif" />
+                            </li>
+                            <li class="list-item">
+                                Ashish Bhaiya Placed <img src="./images/tnew.gif" />
+                            </li>
+                            <li class="list-item">
+                                Avinash Bhaiya Placed <img src="./images/tnew.gif" />
+                            </li>
+                            <li class="list-item">
+                                Bharat Bhaiya Placed <img src="./images/tnew.gif" />
+                            </li>
+                        </ul>
+                    </div>
+                </div>.<br></div>
+                <div class="rightContent" ><button type="submit" id="logOut">Log-Out</button><br></div>
+            </div>
+        </nav>
+        
+    </div>
+    <%-include('partials/footer')%>
+    <script src="/js/adminPage.js"></script>
+</body>
+</html>

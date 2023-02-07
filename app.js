@@ -19,6 +19,9 @@ app.get('/alumni/:batch', (req,res)=>{
 app.get('/user', (req,res)=>{
     res.render("signin_signup");
 })
+app.get('/admin', (req,res)=>{
+    res.render("adminPage");
+})
 
 app.listen(PORT, ()=>{
     console.log(`Listening to the port ${PORT}`);
