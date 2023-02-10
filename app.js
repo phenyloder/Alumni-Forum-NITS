@@ -22,7 +22,9 @@ app.get('/user', (req,res)=>{
 app.get('/admin', (req,res)=>{
     res.render("adminPage");
 })
-
+app.get("/updateDatabase", (req, res)=>{
+    res.render("updateDatabase");
+})
 app.listen(PORT, ()=>{
     console.log(`Listening to the port ${PORT}`);
 })
