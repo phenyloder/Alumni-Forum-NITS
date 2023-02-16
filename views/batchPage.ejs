@@ -17,7 +17,7 @@
     <div class="batchHead"><b>Batch of <%=batch%></b></div>
     <div class="alumniSection">
         <%for (var i=0;i<batchData.length;i++){%>
-            <%if(batchData[i].id==='batch'+batch){%>
+            <%if(batchData[i].batchId==='batch'+batch){%>
                 <%for (var j=0; j<batchData[i].content.length; j++){%>
                     <%-include("partials/card", {cardData:batchData[i].content[j]})%>
                 <%}%>
