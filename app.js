@@ -7,6 +7,7 @@ const PORT = 3000;
 
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json())
 app.use(express.static("public"));
 
 app.get('/', (req,res)=>{
@@ -24,6 +25,10 @@ app.get('/admin', (req,res)=>{
 })
 app.get("/updateDatabase", (req, res)=>{
     res.render("updateDatabase");
+})
+app.post("/updateDatabase", (req, res)=>{
+    const databaseContent = req.body;
+    console.log(databaseContent);
 })
 app.listen(PORT, ()=>{
     console.log(`Listening to the port ${PORT}`);

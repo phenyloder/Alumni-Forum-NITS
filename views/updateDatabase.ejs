@@ -39,19 +39,8 @@
         </div>
     </div>
     <%-include('partials/footer')%>
-    <!-- <script src="/js/adminPage.js"></script> -->
-    <script src="/js/papaParse.js"></script>
-    <script>
-        var fileInput = document.getElementById('databaseCSV');
-        fileInput.addEventListener('change', function (event) {
-          var csvInput = event.target;
-          var file = csvInput.files[0];
-          Papa.parse(file, {
-            complete: function (results) {
-              console.log(results.data); 
-            }
-          });
-        });
-      </script>
+    <script src="/js/axios.min.js"></script>
+    <script src="/js/csvToJson.js"></script>
+    <script src="/js/updateDatabase.js"></script>
 </body>
 </html>
