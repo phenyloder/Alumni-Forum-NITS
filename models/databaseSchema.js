@@ -1,16 +1,6 @@
 const mongoose = require("mongoose");
 
 const databaseSchema = new mongoose.Schema({
-  batchId: {
-    type: String,
-    required: true,
-  },
-  content: [
-    {
-      id: {
-        type: Number,
-        required: true,
-      },
       batch: {
         type: Number,
         required: true,
@@ -34,11 +24,9 @@ const databaseSchema = new mongoose.Schema({
       },
       presentStatus: {
         type: String,
-      },
-    },
-  ],
+      }
 });
 
-const batchData = mongoose.model("batchData", databaseSchema, "batchData");
+const batchData = mongoose.model("batchData", databaseSchema, "batchDatas");
 
 module.exports = batchData;
