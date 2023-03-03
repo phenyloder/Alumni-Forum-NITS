@@ -1,6 +1,6 @@
 const batchData = [
     {
-        id: "batch2020",
+        batchId: "batch2020",
         content:[
             {
                 id:0,
@@ -40,7 +40,7 @@ const batchData = [
         ]
     },
     {
-        id: "batch2021",
+        batchId: "batch2021",
         content: [
             {
                 id:0,
@@ -80,7 +80,7 @@ const batchData = [
         ]
     },
     {
-        id: "batch2022",
+        batchId: "batch2022",
         content: [
             {
                 id:0,
@@ -120,7 +120,7 @@ const batchData = [
         ]
     },
     {
-        id: "batch2023",
+        batchId: "batch2023",
         content: [
             {
                 id:0,
