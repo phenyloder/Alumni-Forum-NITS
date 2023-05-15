@@ -2,6 +2,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const batchData = require("./models/databaseSchema");
 const connectToMongo = require("./db");
+const { RegisterUser } = require("./Controllers/UserController");
 const app = express();
 connectToMongo()
 const PORT = 3000;
@@ -22,6 +23,10 @@ app.get('/alumni/:batch', async (req,res)=>{
 app.get('/user', (req,res)=>{
     res.render("signin_signup");
 })
+
+app.post('/user', RegisterUser);
+
+
 app.get('/admin', (req,res)=>{
     res.render("adminPage");
 })

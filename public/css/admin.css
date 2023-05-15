@@ -14,6 +14,7 @@ body{
     display: flex;
     width: 100%;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
 }
 
@@ -28,9 +29,11 @@ body{
 .dashboardContent{
     position: relative;
     display: flex;
+    width: 100%;
     justify-content: space-between;
-    padding: 2% 2%;
+    padding: 2% 0;
 }
+
 
 .dashboardSidebar{
     position: relative;
@@ -38,10 +41,6 @@ body{
     flex-direction: column;
     width: 30%;
     height: max-content;
-    background-color: #f5f5f5;
-    border-radius: 8px;
-    border-color: rgb(15, 15, 15);
-    box-shadow:  0px 2px 10px rgb(93, 93, 93);
 }
 
 .sidebarContent{
@@ -50,34 +49,62 @@ body{
     width: 100%;
     flex-direction: column;
     justify-content: space-between;
+    margin: 5%;
     font-size: 1.1rem;
+    padding: 5%;
 }
 
 .sidebarItem{
     position: relative;
+    display: flex;
+    justify-content: space-between;
+    width: 60%;
     margin: 3% 0;
-    border-top: 1px solid #bbb;
+    height: 100%;
+    padding: 0 0.8rem;
+    border-left: 5px solid #dd4800;
+    cursor: pointer;
+}
+
+.sidebarItem.active::after{
+        content: '';
+        width: 100%;
+        height: 5px;
+        background-color: #dd4800;
+        position: absolute;
+        left: 0;
+        bottom: -8px;
+        transition: 0.2s;
+}
+
+.rightContent {
+    display: flex;
+    margin: 5%;
+}
+
+.dashboardRightPanel{
+    position: relative;
+    width: 70%;
 }
 .rightPortal
 {
     width: 40%;
     height: 40%;
-    display: block;
+    display: flex;
     margin: 5% 5%; 
 }
 
-.active_tab{
-    display: block;
+.hidden{
+    display: none;
 }
 
  #logOut{
-    width: 20%;
-    height: 50px;
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content:center ;
     background-color: #1B998B;
     font-size: 25px;
     font-weight: 2px;
-    margin-left: 40%;
     border-radius: 8px;
     box-shadow:  0px 2px 10px rgb(93, 93, 93);
 }

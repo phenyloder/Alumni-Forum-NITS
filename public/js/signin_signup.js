@@ -1,3 +1,5 @@
+// const { default: axios } = require("axios");
+
 const sign_in_btn = document.querySelector('#sign-in-btn');
 const sign_up_btn = document.querySelector('#sign-up-btn');
 const container = document.querySelector('.container');
@@ -5,6 +7,12 @@ const title = document.querySelector('title');
 const loginForm = document.querySelector(".sign-in-form");
 const loginUsernameInput = document.querySelector(".login-username");
 const loginPasswordInput = document.querySelector(".login-password");
+
+const signUpForm = document.querySelector('.sign-up-form');
+const registerUserNameInput = document.querySelector('.register-username');
+const registerEmailInput = document.querySelector('.register-email');
+const registerPasswordInput = document.querySelector('.register-password');
+
 
 sign_up_btn.addEventListener('click', ()=>{
     title.innerHTML = "Alumni Forum | Sign Up";
@@ -19,6 +27,17 @@ sign_in_btn.addEventListener('click', ()=>{
 loginForm.addEventListener('submit', ()=> {
     const loginUsername = loginUsernameInput.value;
     const loginPassword = loginPasswordInput.value;  
-    const loginInfo = {loginUsername, loginPassword};
-    axios.post("/login", loginInfo);
+    const loginInfo = { loginUsername, loginPassword };
+    console.log(loginInfo);
+    axios.post("/user", loginInfo);
+})
+
+signUpForm.addEventListener('submit', () => {
+    const registerUserName = registerUserNameInput.value;
+    const registerEmail = registerEmailInput.value;
+    const registerPassword = registerPasswordInput.value;
+
+    const RegisteredInfo = { registerUserName, registerEmail, registerPassword };
+    console.log(RegisteredInfo);
+    axios.post("/user", RegisteredInfo);
 })
