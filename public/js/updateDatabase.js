@@ -1,13 +1,13 @@
 var fileInput = document.getElementById("databaseCSV");
-const batchYear = 2024;
+const batchYearBox = document.querySelector(".batchField");
 
 const processData = (results, batchYear) => {
-  let dataArr = [];
+  // console.log(batchYear);
   let outerObj = new Object();
   outerObj.batchId = "batch" + batchYear;
   let resultArr = results.data;
   outerObj.content = resultArr;
-  console.log(outerObj);
+  // console.log(outerObj);
   axios.post('/updateDatabase', outerObj, {
     headers:{
         updateDatabase: true,
@@ -22,6 +22,7 @@ async function convertToJson(){
     "selector": "databaseCSV",
     "delimiter": ","
     });
+    const batchYear = batchYearBox.value;
     processData(jsonData, batchYear);
 }
 
