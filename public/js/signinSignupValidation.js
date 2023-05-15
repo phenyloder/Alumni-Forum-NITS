@@ -3,8 +3,11 @@ const passwordField = document.querySelector(".register-password") ;
 const emailErrorList = document.querySelector(".emailErrorList");
 const passwordErrorList = document.querySelector(".passwordErrorList") ;
 
+const usernameLoginField = document.querySelector(".login-username")
 const passwordLoginField= document.querySelector(".login-password");
 const passwordErrorListLogin=document.querySelector(".passwordErrorListLogin");
+
+const loginFormVar = document.querySelector(".sign-in-form");
 
 // console.log(passwordLoginField);
 
@@ -41,7 +44,7 @@ const  setSuccessLoginPassword = (t) => {
     passwordErrorListLogin.classList.add("hide");
 }
 
-const validateEmail = (t) => {
+const validateEmail = (t, e) => {
     const inputEmail = t.value;
     const checkEmail=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
     const inputBoxOuter = t.parentElement;
@@ -60,7 +63,7 @@ const validateEmail = (t) => {
     }
 }
 
-const validateLoginPassword = (t) => {
+const validateLoginPassword = (t, e) => {
     const inputPassword = t.value;
     const checkPassword = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,15}$/;
     const inputBoxOuter=t.parentElement;
@@ -80,7 +83,7 @@ const validateLoginPassword = (t) => {
     }
 }
 
-const validatePassword = (t) => {
+const validatePassword = (t, e) => {
     const inputPassword = t.value;
     const checkPassword = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,15}$/;
     const inputBoxOuter=t.parentElement;
@@ -110,7 +113,17 @@ emailField.addEventListener("change", (event) => {
 passwordField.addEventListener("change", (event) => {
     validatePassword(event.target);
 })
-
 passwordLoginField.addEventListener("change", (event) => {
     validateLoginPassword(event.target);
+})
+
+loginFormVar.addEventListener("submit", ()=>{
+    const loginUsername = usernameLoginField.value
+    const loginPassword = passwordLoginField.value
+
+    if(loginUsername==="admin" && loginPassword==="Admin@123"){
+        location.replace("/admin");
+    }else{
+        alert("Wrong Username or Password!!");
+    }
 })

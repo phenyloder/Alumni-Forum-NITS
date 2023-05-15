@@ -24,7 +24,7 @@ body, input{
     width: 2000px;
     height: 2000px;
     border-radius: 50%;
-    background: #1B998B;
+    background: #ea8451;
     top: -10%;
     right: 48%;
     transform: translateY(-50%);
@@ -174,7 +174,7 @@ form.sign-up-form{
     outline: none;
     border-radius: 49px;
     cursor: pointer;
-    background-color: #1B998B;
+    background-color: #ea8451;
     color: #fff;
     text-transform: uppercase;
     font-weight: 600;
