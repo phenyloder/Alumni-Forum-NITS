@@ -25,6 +25,7 @@
     "express": "^4.18.2",
     "express-async-handler": "^1.2.0",
     "mongoose": "^6.8.0",
+    "nodemon": "^2.0.22",
     "scss": "^0.2.4"
   }
 }

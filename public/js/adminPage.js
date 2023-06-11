@@ -13,3 +13,13 @@ function func(tabname) {
     event.currentTarget.classList.add('active');
     document.getElementById(tabname).classList.remove('hidden');
 }
+
+const noticeTextBox = document.querySelector(".noticeTextBox");
+const noticeSubmitBtn = document.querySelector(".noticeSubmitBtn");
+
+noticeSubmitBtn.addEventListener("click", ()=>{
+    const noticeText = noticeTextBox.value
+    axios.post("/updateNotice", {
+        'noticeHead': noticeText
+    })
+})

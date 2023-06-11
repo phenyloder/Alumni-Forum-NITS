@@ -24,20 +24,29 @@ sign_in_btn.addEventListener('click', ()=>{
     container.classList.remove("sign-up-mode");
 })
 
-loginForm.addEventListener('submit', ()=> {
+loginForm.addEventListener('submit', async()=> {
     const loginUsername = loginUsernameInput.value;
-    const loginPassword = loginPasswordInput.value;  
-    const loginInfo = { loginUsername, loginPassword };
-    console.log(loginInfo);
-    axios.post("/user", loginInfo);
+    const loginPassword = loginPasswordInput.value; 
+    const loginInfo = { loginUsername, loginPassword};
+
+    await axios.post("/login", loginInfo,
+    {
+        headers: {
+            'dataType' : 'login'
+        }
+    });
 })
 
-signUpForm.addEventListener('submit', () => {
+signUpForm.addEventListener('submit', async() => {
     const registerUserName = registerUserNameInput.value;
     const registerEmail = registerEmailInput.value;
     const registerPassword = registerPasswordInput.value;
+    const registeredInfo = { registerUserName, registerEmail, registerPassword};
 
-    const RegisteredInfo = { registerUserName, registerEmail, registerPassword };
-    console.log(RegisteredInfo);
-    axios.post("/user", RegisteredInfo);
+    await axios.post("/register", registeredInfo, 
+    {
+        headers: {
+            'dataType' : 'register'
+        }
+    });
 })

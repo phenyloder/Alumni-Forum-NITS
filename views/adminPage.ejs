@@ -27,14 +27,11 @@
       <div class="dashboardContent">
         <div class="dashboardSidebar">
           <div class="sidebarContent">
-            <div class="sidebarItem active" onclick="func('forum')">
-              Forum Mangement
+            <div class="sidebarItem active" onclick="func('database')">
+              Database Management
             </div>
-    
-            <div class="dashboardRightPanel" >
-                <div class="rightContent active_tab" id="forum">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi error quas ipsam ea hic modi voluptates fugiat, amet consectetur consequuntur quam consequatur sed possimus aspernatur quibusdam rem sapiente impedit provident? <br></div>
-                <div class="rightContent" id="studentData">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptas accusamus explicabo aut alias! Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium beatae voluptatum laborum sunt, quisquam error.<br></div>
-                <div class="rightContent" ><button type="submit" id="logOut">Log-Out</button><br></div>
+            <div class="sidebarItem" onclick="func('forum')">
+              Forum Mangement
             </div>
             <div class="sidebarItem" onclick="func('notification')">
               Notice Management
@@ -42,7 +39,7 @@
           </div>
         </div>
         <div class="dashboardRightPanel">
-          <div class="rightContent " id="forum">
+          <div class="rightContent" id="forum">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus
             atque sequi impedit dicta recusandae consequatur modi nostrum
             repellendus? Error quo soluta, fugit perspiciatis corrupti iusto
@@ -52,7 +49,7 @@
             sed possimus aspernatur quibusdam rem sapiente impedit provident?
             <br />
           </div>
-          <div class="rightContent hidden" id="studentData ">
+          <div class="rightContent hidden" id="database">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum
             earum molestias quam natus voluptatem alias nam rem accusantium
             explicabo et cupiditate maiores quisquam, quo, ipsum dignissimos
@@ -62,35 +59,24 @@
             beatae voluptatum laborum sunt, quisquam error.<br />
           </div>
           <div class="rightContent hidden" id="notification">
-            <div class="notices">
-              <div class="notice-heading">Notices</div>
-              <div class="line"></div>
-              <div class="notice-list">
-                <ul class="ul-notice">
-                  <li class="list-item">
-                    Hemdutt Bhaiya Placed <img src="./images/tnew.gif" />
-                  </li>
-                  <li class="list-item">
-                    Arjun Bhaiya Placed <img src="./images/tnew.gif" />
-                  </li>
-                  <li class="list-item">
-                    Ashish Bhaiya Placed <img src="./images/tnew.gif" />
-                  </li>
-                  <li class="list-item">
-                    Avinash Bhaiya Placed <img src="./images/tnew.gif" />
-                  </li>
-                  <li class="list-item">
-                    Bharat Bhaiya Placed <img src="./images/tnew.gif" />
-                  </li>
-                </ul>
+            <form
+              action="/updateNotice"
+              onsubmit="return false;"
+              class="noticeForm"
+            >
+              <div class="noticeLabel">Type Notice Text Here to Add:</div>
+              <div class="noticeTextSection">
+                <input type="text" class="noticeTextBox" />
+                <div class="noticeSubmitBtn">Submit</div>
               </div>
-            </div>
+            </form>
           </div>
         </div>
       </div>
       <div><button type="submit" id="logOut">Log-Out</button><br /></div>
     </div>
     <%-include('partials/footer')%>
+    <script src="js/axios.min.js"></script>
     <script src="/js/adminPage.js"></script>
   </body>
 </html>

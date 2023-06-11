@@ -76,24 +76,11 @@
         <div class="line"></div>
         <div class="notice-list">
             <ul class="ul-notice">
-                <li class="list-item">
-                    Hemdutt Bhaiya Placed <img src="./images/tnew.gif" />
-                </li>
-                <li class="list-item">
-                    Arjun Bhaiya Placed <img src="./images/tnew.gif" />
-                </li>
-                <li class="list-item">
-                    Ashish Bhaiya Placed <img src="./images/tnew.gif" />
-                </li>
-                <li class="list-item">
-                    Avinash Bhaiya Placed <img src="./images/tnew.gif" />
-                </li>
-                <li class="list-item">
-                    Bharat Bhaiya Placed <img src="./images/tnew.gif" />
-                </li>
-                <li class="list-item">
-                    Mishra Got Intern!! <img src="./images/tnew.gif" />
-                </li>
+                <%for (var i=0;i<noticeData.length;i++){%>
+                    <li class="list-item">
+                        <%=noticeData[i].noticeHead%> <img src="./images/tnew.gif" />
+                    </li>
+                <%}%>
             </ul>
         </div>
     </div>
